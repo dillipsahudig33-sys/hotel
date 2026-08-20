@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Spandan | A/C Family Restaurant & Banquets | Authentic Odia & Indian Multi-Cuisine</title>
+  <meta name="description" content="Welcome to Hotel Spandan - The premier A/C Family Restaurant known for authentic Odia Royal Pakhala, sizzling tandoori kebabs, rich handi curries, and banquet celebrations.">
+  <meta name="keywords" content="Hotel Spandan, Spandan Restaurant, Odia Pakhala Thali, Family Restaurant, Banquet Hall, Table Reservation, Indian Multi-Cuisine">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Oriya:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span><i class="fa-solid fa-sparkles"></i> <strong>ହୋଟେଲ ସ୍ପନ୍ଦନ</strong> • Premium A/C Family Restaurant</span>
+        <span class="divider">|</span>
+        <span><i class="fa-regular fa-clock"></i> Open Daily: 11:30 AM – 11:00 PM</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+919876543210" class="top-link"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+        <a href="https://wa.me/919876543210?text=Hello%20Hotel%20Spandan,%20I%20would%20like%20to%20reserve%20a%20table%20/%20order%20food" target="_blank" class="top-link whatsapp-top">
+          <i class="fa-brands fa-whatsapp"></i> Quick WhatsApp
+        </a>
+        <span class="badge-hygiene"><i class="fa-solid fa-shield-halved"></i> 100% Pure & Hygienic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="navbar">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo">
+        <div class="logo-emblem">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">HOTEL SPANDAN</span>
+          <span class="logo-odia">ହୋଟେଲ ସ୍ପନ୍ଦନ</span>
+          <span class="logo-sub">A/C FAMILY RESTAURANT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#specials" class="nav-link">Signature Dishes</a></li>
+          <li><a href="#menu" class="nav-link">Digital Menu</a></li>
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#banquets" class="nav-link">Banquets & Parties</a></li>
+          <li><a href="#gallery" class="nav-link">Ambience</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <!-- Order Basket Trigger -->
+        <button class="cart-trigger-btn" id="openCartBtn" title="View Selected Items">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Book Table CTA Button -->
+        <button class="btn btn-primary" id="bookTableNavBtn">
+          <i class="fa-solid fa-chair"></i> Book a Table
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <span class="drawer-title">HOTEL SPANDAN</span>
+        <span class="drawer-sub">A/C Family Restaurant</span>
+      </div>
+      <button class="drawer-close" id="drawerCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#hero" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#specials" class="drawer-link"><i class="fa-solid fa-star"></i> Signature Dishes</a></li>
+      <li><a href="#menu" class="drawer-link"><i class="fa-solid fa-book-open"></i> Full Digital Menu</a></li>
+      <li><a href="#story" class="drawer-link"><i class="fa-solid fa-heart"></i> Our Story & Heritage</a></li>
+      <li><a href="#banquets" class="drawer-link"><i class="fa-solid fa-cake-candles"></i> Banquets & Celebrations</a></li>
+      <li><a href="#gallery" class="drawer-link"><i class="fa-solid fa-images"></i> Ambience & Gallery</a></li>
+      <li><a href="#reviews" class="drawer-link"><i class="fa-solid fa-comments"></i> Guest Reviews</a></li>
+      <li><a href="#contact" class="drawer-link"><i class="fa-solid fa-location-dot"></i> Contact & Location</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" id="drawerBookBtn"><i class="fa-solid fa-chair"></i> Book Table Now</button>
+      <a href="tel:+919876543210" class="btn btn-outline btn-block mt-2"><i class="fa-solid fa-phone"></i> Direct Call</a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Hero Section with Actual Hotel Spandan Visuals -->
+  <section class="hero-section" id="hero">
+    <div class="hero-backdrop">
+      <img src="/public/images/hotel-building-lights.jpg" alt="Hotel Spandan Illuminated Night View" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge animate-fade-in">
+        <span class="pulse-dot"></span>
+        <span>Welcome to Hotel Spandan • ହୋଟେଲ ସ୍ପନ୍ଦନ</span>
+      </div>
+
+      <h1 class="hero-title animate-fade-up">
+        A Symphony of <span class="text-gold">Authentic Flavors</span> & Heartfelt Family Hospitality
+      </h1>
+
+      <p class="hero-subtitle animate-fade-up delay-1">
+        Indulge in authentic Odia Royal Pakhala Thalis, sizzling tandoori starters, aromatic dum biryanis, and rich handi curries served in a luxurious, fully air-conditioned family restaurant.
+      </p>
+
+      <!-- Hero CTA Buttons -->
+      <div class="hero-cta-group animate-fade-up delay-2">
+        <button class="btn btn-gold btn-lg" id="heroBookTableBtn">
+          <i class="fa-solid fa-calendar-check"></i> Reserve a Table
+        </button>
+        <a href="#menu" class="btn btn-glass btn-lg">
+          <i class="fa-solid fa-utensils"></i> Explore Digital Menu
+        </a>
+        <a href="https://wa.me/919876543210?text=Hi%20Hotel%20Spandan,%20I%20want%20to%20order%20takeaway/food" target="_blank" class="btn btn-whatsapp btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+
+      <!-- Quick Reservation Bar -->
+      <div class="quick-booking-card animate-fade-up delay-3">
+        <div class="qb-header">
+          <i class="fa-solid fa-champagne-glasses"></i>
+          <span>Instant Table Booking & Inquiry</span>
+        </div>
+        <form class="qb-form" id="quickReservationForm">
+          <div class="qb-field">
+            <label><i class="fa-regular fa-calendar"></i> Date</label>
+            <input type="date" id="qbDate" required>
+          </div>
+          <div class="qb-field">
+            <label><i class="fa-regular fa-clock"></i> Time Slot</label>
+            <select id="qbTime" required>
+              <option value="12:30 PM">Lunch: 12:30 PM</option>
+              <option value="01:30 PM">Lunch: 01:30 PM</option>
+              <option value="02:30 PM">Lunch: 02:30 PM</option>
+              <option value="07:30 PM" selected>Dinner: 07:30 PM</option>
+              <option value="08:30 PM">Dinner: 08:30 PM</option>
+              <option value="09:30 PM">Dinner: 09:30 PM</option>
+              <option value="10:00 PM">Dinner: 10:00 PM</option>
+            </select>
+          </div>
+          <div class="qb-field">
+            <label><i class="fa-solid fa-user-group"></i> Guests</label>
+            <select id="qbGuests" required>
+              <option value="2 Guests">2 Guests (Couple Table)</option>
+              <option value="4 Guests" selected>4 Guests (Family Table)</option>
+              <option value="6 Guests">6 Guests (Large Table)</option>
+              <option value="8+ Guests">8+ Guests (Celebration / Banquet)</option>
+            </select>
+          </div>
+          <div class="qb-field">
+            <label><i class="fa-solid fa-utensils"></i> Dining Type</label>
+            <select id="qbOccasion">
+              <option value="Family Dinner">Family Dinner</option>
+              <option value="Birthday Party">Birthday Party</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Business Lunch">Business Lunch</option>
+              <option value="Casual Dine-in">Casual Dine-in</option>
+            </select>
+          </div>
+          <div class="qb-action">
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-arrow-right"></i> Book Table
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fa-solid fa-bowl-food"></i></div>
+          <div class="hi-info">
+            <h4>Authentic Royal Thalis</h4>
+            <p>Traditional Kansa Tableware</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fa-solid fa-snowflake"></i></div>
+          <div class="hi-info">
+            <h4>Modern A/C Ambience</h4>
+            <p>Cosy, spacious family seating</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fa-solid fa-fire-burner"></i></div>
+          <div class="hi-info">
+            <h4>Tandoor & Multi-Cuisine</h4>
+            <p>North Indian, Chinese & Odia</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <div class="hi-info">
+            <h4>Party & Banquet Hall</h4>
+            <p>Birthdays & Corporate Events</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Signature Chef's Specials (Featuring Actual User Uploaded Images!) -->
+  <section class="section specials-section" id="specials">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-crown"></i> Culinary Crown Jewels</span>
+        <h2 class="section-title">Chef's Signature Creations</h2>
+        <p class="section-desc">Handcrafted with secret home-ground spice blends and cooked to perfection for a memorable dining experience.</p>
+      </div>
+
+      <div class="specials-grid">
+
+        <!-- Special 1: Royal Odia Pakhala Thali (User Image) -->
+        <div class="special-card signature-featured">
+          <div class="special-badge">⭐ Spandan Pride</div>
+          <div class="special-img-wrap">
+            <img src="/public/images/royal-pakhala-thali.jpg" alt="Hotel Spandan Royal Odia Pakhala Thali" class="special-img" loading="lazy">
+            <div class="dietary-tag veg"><span class="dot"></span> Pure Veg / Authentic</div>
+            <button class="zoom-btn" onclick="openLightbox('/public/images/royal-pakhala-thali.jpg', 'Hotel Spandan Royal Odia Pakhala Thali in Traditional Kansa Tableware')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+          <div class="special-body">
+            <div class="special-header-row">
+              <h3 class="special-title">Royal Odia Pakhala Thali (ରାଜକୀୟ ପଖାଳ ଥାଳି)</h3>
+              <span class="special-price">₹280</span>
+            </div>
+            <p class="special-desc">
+              Authentic Odia curd-fermented rice served royal-style in golden brass <em>Kansa</em> bowls, accompanied with crunchy Badi Chura, seasonal Saaga Bhaja, aloo chokha, golden crispy wafers, zesty roasted chili, and homemade pickles.
+            </p>
+            <div class="special-tags">
+              <span class="tag"><i class="fa-solid fa-gem"></i> Traditional Kansa Thali</span>
+              <span class="tag"><i class="fa-solid fa-heart"></i> Local Heritage</span>
+              <span class="tag"><i class="fa-solid fa-pepper-hot"></i> Mild & Refreshing</span>
+            </div>
+            <div class="special-footer">
+              <button class="btn btn-outline btn-sm add-to-cart-btn" data-id="pakhala-1" data-name="Royal Odia Pakhala Thali" data-price="280">
+                <i class="fa-solid fa-plus"></i> Add to Order
+              </button>
+              <button class="btn btn-gold btn-sm quick-book-item" data-dish="Royal Odia Pakhala Thali">
+                <i class="fa-solid fa-chair"></i> Reserve for Dine-in
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special 2: Spandan Special Handi Curry (User Image) -->
+        <div class="special-card">
+          <div class="special-badge">🔥 Bestseller</div>
+          <div class="special-img-wrap">
+            <img src="/public/images/spandan-special-curry.jpg" alt="Hotel Spandan Special Rich Handi Curry" class="special-img" loading="lazy">
+            <div class="dietary-tag special"><span class="dot"></span> Chef's Secret Recipe</div>
+            <button class="zoom-btn" onclick="openLightbox('/public/images/spandan-special-curry.jpg', 'Hotel Spandan Special Rich Handi Curry with Butter Swirl')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+          <div class="special-body">
+            <div class="special-header-row">
+              <h3 class="special-title">Spandan Special Rich Handi Curry</h3>
+              <span class="special-price">₹320</span>
+            </div>
+            <p class="special-desc">
+              Velvety, slow-simmered rich gravy infused with hand-crushed whole spices, fresh cream, melting butter swirl, and aromatic kasuri methi. Available in Paneer / Chicken / Mutton.
+            </p>
+            <div class="special-tags">
+              <span class="tag"><i class="fa-solid fa-fire"></i> Rich Butter Gravy</span>
+              <span class="tag"><i class="fa-solid fa-pepper-hot"></i> Medium Spicy</span>
+            </div>
+            <div class="special-footer">
+              <button class="btn btn-outline btn-sm add-to-cart-btn" data-id="curry-1" data-name="Spandan Special Rich Handi Curry" data-price="320">
+                <i class="fa-solid fa-plus"></i> Add to Order
+              </button>
+              <button class="btn btn-gold btn-sm quick-book-item" data-dish="Spandan Special Handi Curry">
+                <i class="fa-solid fa-chair"></i> Reserve Table
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special 3: Crispy Spiced Kebab Starter (User Image) -->
+        <div class="special-card">
+          <div class="special-badge">🍗 Hot Starter</div>
+          <div class="special-img-wrap">
+            <img src="/public/images/crispy-chicken-kebab.jpg" alt="Spandan Crispy Starter Platter with Onions" class="special-img" loading="lazy">
+            <div class="dietary-tag nonveg"><span class="dot"></span> Crispy & Juicy</div>
+            <button class="zoom-btn" onclick="openLightbox('/public/images/crispy-chicken-kebab.jpg', 'Hotel Spandan Crispy Spiced Kebab with Fresh Red Onion Rings')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+          <div class="special-body">
+            <div class="special-header-row">
+              <h3 class="special-title">Spandan Crispy Kebab Crunch</h3>
+              <span class="special-price">₹260</span>
+            </div>
+            <p class="special-desc">
+              Marinated tender succulent bites crusted in golden fiery spices, deep-fried to crackling perfection, topped with freshly cut red onion rings, chaat masala, and mint dip.
+            </p>
+            <div class="special-tags">
+              <span class="tag"><i class="fa-solid fa-bolt"></i> Extra Crunchy</span>
+              <span class="tag"><i class="fa-solid fa-pepper-hot"></i> Zesty Spices</span>
+            </div>
+            <div class="special-footer">
+              <button class="btn btn-outline btn-sm add-to-cart-btn" data-id="starter-1" data-name="Spandan Crispy Kebab Crunch" data-price="260">
+                <i class="fa-solid fa-plus"></i> Add to Order
+              </button>
+              <button class="btn btn-gold btn-sm quick-book-item" data-dish="Spandan Crispy Kebab">
+                <i class="fa-solid fa-chair"></i> Reserve Table
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special 4: Royal Dum Biryani Handi -->
+        <div class="special-card">
+          <div class="special-badge">👑 Royal Aroma</div>
+          <div class="special-img-wrap">
+            <img src="/public/images/biryani-handi.jpg" alt="Hotel Spandan Royal Dum Biryani Handi" class="special-img" loading="lazy">
+            <div class="dietary-tag special"><span class="dot"></span> Dum Cooked</div>
+            <button class="zoom-btn" onclick="openLightbox('/public/images/biryani-handi.jpg', 'Hotel Spandan Royal Dum Biryani in Copper Handi with Roasted Cashews & Raita')">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+          <div class="special-body">
+            <div class="special-header-row">
+              <h3 class="special-title">Royal Handi Dum Biryani</h3>
+              <span class="special-price">₹290</span>
+            </div>
+            <p class="special-desc">
+              Fragrant aged basmati rice slow-cooked in sealed copper handi with rich saffron strands, roasted cashews, fried brown onions, fresh mint, served with creamy cucumber raita and spicy salan.
+            </p>
+            <div class="special-tags">
+              <span class="tag"><i class="fa-solid fa-spoon"></i> Copper Handi</span>
+              <span class="tag"><i class="fa-solid fa-star"></i> Saffron Infused</span>
+            </div>
+            <div class="special-footer">
+              <button class="btn btn-outline btn-sm add-to-cart-btn" data-id="biryani-1" data-name="Royal Handi Dum Biryani" data-price="290">
+                <i class="fa-solid fa-plus"></i> Add to Order
+              </button>
+              <button class="btn btn-gold btn-sm quick-book-item" data-dish="Royal Handi Dum Biryani">
+                <i class="fa-solid fa-chair"></i> Reserve Table
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Heritage Section (Featuring Actual Building Facade Image) -->
+  <section class="section story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        
+        <!-- Story Visual with Hotel Spandan Real Facade -->
+        <div class="story-visual">
+          <div class="story-img-main-wrap">
+            <img src="/public/images/hotel-facade-night.jpg" alt="Hotel Spandan A/C Family Restaurant Front View" class="story-main-img">
+            <div class="story-floating-card">
+              <div class="sfc-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="sfc-text">
+                <strong>Loved by Families</strong>
+                <span>Top Rated Dining Destination</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-img-sub-wrap">
+            <img src="/public/images/restaurant-interior.jpg" alt="Comfortable Family Dining Hall" class="story-sub-img">
+          </div>
+        </div>
+
+        <!-- Story Content -->
+        <div class="story-content">
+          <span class="section-tag"><i class="fa-solid fa-heart"></i> Our Story & Soul</span>
+          <h2 class="section-title">Where Warm Hospitality Meets <span class="text-gold">Culinary Perfection</span></h2>
+          <p class="lead-text">
+            <strong>Hotel Spandan (ହୋଟେଲ ସ୍ପନ୍ଦନ)</strong> was born out of a profound passion to serve delectable, soul-satisfying food in a warm, welcoming environment that brings families and friends together.
+          </p>
+          <p>
+            From our legendary Odia Pakhala Thalis celebrating regional heritage, to sizzling tandoori platters, rich gravies, and comforting Chinese delicacies — every dish is crafted fresh using premium ingredients, authentic cold-pressed spices, and uncompromising hygiene standards.
+          </p>
+
+          <div class="story-points">
+            <div class="sp-item">
+              <div class="sp-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+              <div class="sp-details">
+                <h4>Master Chefs & Pure Spices</h4>
+                <p>Secret recipes cooked fresh with no artificial preservatives or shortcuts.</p>
+              </div>
+            </div>
+            <div class="sp-item">
+              <div class="sp-icon"><i class="fa-solid fa-snowflake"></i></div>
+              <div class="sp-details">
+                <h4>Air-Conditioned Family Comfort</h4>
+                <p>Spacious seating, serene ambient lighting, and dedicated celebration halls.</p>
+              </div>
+            </div>
+            <div class="sp-item">
+              <div class="sp-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+              <div class="sp-details">
+                <h4>Attentive & Courteous Service</h4>
+                <p>Prompt hospitality ensuring you and your loved ones feel right at home.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Counters -->
+          <div class="story-stats">
+            <div class="stat-box">
+              <span class="stat-num">120+</span>
+              <span class="stat-label">Delicious Dishes</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">75K+</span>
+              <span class="stat-label">Happy Diners</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">4.9★</span>
+              <span class="stat-label">Google Rating</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Hygiene Certified</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Interactive Digital Menu Section -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-book-open"></i> Full Digital Menu</span>
+        <h2 class="section-title">Explore Our Delicious Menu</h2>
+        <p class="section-desc">Browse through our extensive selection of authentic Odia classics, rich North Indian curries, tandoori starters, rice delicacies, and sweet desserts.</p>
+      </div>
+
+      <!-- Menu Controls: Search & Dietary Filter -->
+      <div class="menu-controls">
+        <div class="menu-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="menuSearchInput" placeholder="Search dishes (e.g. Pakhala, Paneer, Biryani, Naan)...">
+          <button id="clearSearchBtn" class="clear-search-btn" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="dietary-filter-group">
+          <button class="diet-btn active" data-diet="all">All Items</button>
+          <button class="diet-btn veg-filter" data-diet="veg"><span class="dot-veg"></span> Pure Veg</button>
+          <button class="diet-btn nonveg-filter" data-diet="nonveg"><span class="dot-nonveg"></span> Non-Veg</button>
+          <button class="diet-btn chef-filter" data-diet="chef">⭐ Chef Specials</button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="menu-tabs-wrapper">
+        <div class="menu-tabs" id="menuCategories">
+          <button class="tab-btn active" data-category="all"><i class="fa-solid fa-utensils"></i> All</button>
+          <button class="tab-btn" data-category="thali"><i class="fa-solid fa-bowl-food"></i> Odia Thali Specials</button>
+          <button class="tab-btn" data-category="starters"><i class="fa-solid fa-drumstick-bite"></i> Starters & Kebabs</button>
+          <button class="tab-btn" data-category="main-curries"><i class="fa-solid fa-fire-burner"></i> Rich Curries & Gravies</button>
+          <button class="tab-btn" data-category="biryani"><i class="fa-solid fa-bowl-rice"></i> Biryani & Rice</button>
+          <button class="tab-btn" data-category="breads"><i class="fa-solid fa-bread-slice"></i> Tandoori Breads</button>
+          <button class="tab-btn" data-category="chinese"><i class="fa-solid fa-bowl-chopsticks"></i> Chinese & Sizzlers</button>
+          <button class="tab-btn" data-category="beverages"><i class="fa-solid fa-martini-glass-citrus"></i> Mocktails & Desserts</button>
+        </div>
+      </div>
+
+      <!-- Menu Items Container (Rendered dynamically via JS with rich fallback) -->
+      <div class="menu-grid" id="menuItemsGrid">
+        <!-- Will be populated by JS -->
+      </div>
+
+      <!-- Bottom Menu CTA -->
+      <div class="menu-bottom-cta">
+        <div class="mb-cta-card">
+          <div class="mb-text">
+            <h3>Planning a Family Dinner or Large Gathering?</h3>
+            <p>Reserve your preferred table in advance or pre-order custom party menus for seamless service.</p>
+          </div>
+          <div class="mb-btns">
+            <button class="btn btn-gold btn-lg" id="menuBookTableBtn"><i class="fa-solid fa-calendar-check"></i> Book Your Table</button>
+            <button class="btn btn-outline-light btn-lg" id="menuViewCartBtn"><i class="fa-solid fa-bag-shopping"></i> Review Selected Items</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Banquets, Private Celebrations & Catering -->
+  <section class="section banquets-section" id="banquets">
+    <div class="container">
+      <div class="banquets-banner">
+        <div class="banquet-content">
+          <span class="section-tag"><i class="fa-solid fa-cake-candles"></i> Celebrations & Events</span>
+          <h2 class="section-title">Host Your Special Moments at <span class="text-gold">Hotel Spandan</span></h2>
+          <p>
+            Whether it’s a memorable <strong>Birthday Party, Wedding Anniversary, Kitty Party, Ring Ceremony, or Corporate Dinner</strong>, our spacious A/C Banquet Hall and bespoke catering services make every occasion truly unforgettable.
+          </p>
+
+          <div class="banquet-features-grid">
+            <div class="bf-card">
+              <i class="fa-solid fa-users"></i>
+              <h4>Capacity: 50 – 200 Guests</h4>
+              <p>Custom seating arrangements & festive lighting</p>
+            </div>
+            <div class="bf-card">
+              <i class="fa-solid fa-utensils"></i>
+              <h4>Customized Buffet Menus</h4>
+              <p>Tailored Odia, North Indian & Chinese platters</p>
+            </div>
+            <div class="bf-card">
+              <i class="fa-solid fa-music"></i>
+              <h4>Music & Celebration Setup</h4>
+              <p>Audio system, cake table & photo backdrop</p>
+            </div>
+            <div class="bf-card">
+              <i class="fa-solid fa-square-parking"></i>
+              <h4>Valet & Parking Facilities</h4>
+              <p>Hassle-free parking for you and your guests</p>
+            </div>
+          </div>
+
+          <div class="banquet-actions">
+            <button class="btn btn-gold btn-lg" id="openBanquetModalBtn">
+              <i class="fa-solid fa-envelope-open-text"></i> Inquire for Banquet / Party Hall
+            </button>
+            <a href="https://wa.me/919876543210?text=Hi%20Hotel%20Spandan,%20I%20am%20interested%20in%20booking%20the%20Party%20Hall%20for%20an%20event" target="_blank" class="btn btn-whatsapp btn-lg">
+              <i class="fa-brands fa-whatsapp"></i> Chat with Event Manager
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambience & Food Visual Gallery (Featuring All User Uploaded Photos!) -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-images"></i> Visual Ambience</span>
+        <h2 class="section-title">A Glimpse into Hotel Spandan</h2>
+        <p class="section-desc">Experience our warm, inviting ambience, sparkling night lighting, and masterfully plated culinary delights.</p>
+      </div>
+
+      <!-- Gallery Filter Buttons -->
+      <div class="gallery-filters text-center">
+        <button class="g-filter active" data-filter="all">All Photos</button>
+        <button class="g-filter" data-filter="exterior">Exterior & Lights</button>
+        <button class="g-filter" data-filter="food">Food & Signature Dishes</button>
+        <button class="g-filter" data-filter="interior">Dining Ambience</button>
+      </div>
+
+      <!-- Masonry Gallery Grid -->
+      <div class="gallery-grid">
+
+        <!-- 1. Real Building Night Lights (User Upload) -->
+        <div class="gallery-item" data-category="exterior">
+          <div class="g-card">
+            <img src="/public/images/hotel-building-lights.jpg" alt="Hotel Spandan Festival Lighting at Night" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Grand Festive Illumination</h4>
+                <span>Exterior Night View • Hotel Spandan</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/hotel-building-lights.jpg', 'Hotel Spandan - Grand Building Night View with Festival Lights')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Real Front Facade (User Upload) -->
+        <div class="gallery-item" data-category="exterior">
+          <div class="g-card">
+            <img src="/public/images/hotel-facade-night.jpg" alt="Hotel Spandan A/C Family Restaurant Front Facade" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Main Entrance & Neon Signage</h4>
+                <span>ହୋଟେଲ ସ୍ପନ୍ଦନ A/C Family Restaurant</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/hotel-facade-night.jpg', 'Hotel Spandan - Front Facade & Entrance with Neon Signage')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Real Royal Pakhala Thali (User Upload) -->
+        <div class="gallery-item" data-category="food">
+          <div class="g-card">
+            <img src="/public/images/royal-pakhala-thali.jpg" alt="Royal Odia Pakhala Thali in Brass Kansa Utensils" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Royal Odia Pakhala Thali</h4>
+                <span>Authentic Kansa Brass Tableware</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/royal-pakhala-thali.jpg', 'Royal Odia Pakhala Thali served in traditional brass Kansa bowls')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Real Crispy Starter (User Upload) -->
+        <div class="gallery-item" data-category="food">
+          <div class="g-card">
+            <img src="/public/images/crispy-chicken-kebab.jpg" alt="Crispy Fried Kebab Starter Platter" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Crispy Spiced Starter</h4>
+                <span>Freshly fried with red onion rings</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/crispy-chicken-kebab.jpg', 'Crispy spiced starter on leaf platter with sliced red onions')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Real Rich Curry (User Upload) -->
+        <div class="gallery-item" data-category="food">
+          <div class="g-card">
+            <img src="/public/images/spandan-special-curry.jpg" alt="Rich Handi Curry with Butter Garnish" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Spandan Special Handi Curry</h4>
+                <span>Rich aromatic gravy with melting butter</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/spandan-special-curry.jpg', 'Spandan Special Handi Curry with Butter Swirl')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Dum Biryani Handi -->
+        <div class="gallery-item" data-category="food">
+          <div class="g-card">
+            <img src="/public/images/biryani-handi.jpg" alt="Royal Handi Dum Biryani" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Royal Dum Biryani</h4>
+                <span>Aromatic Basmati & Roasted Cashews</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/biryani-handi.jpg', 'Royal Dum Biryani in Copper Handi with Raita')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Tandoori Platter & Naan -->
+        <div class="gallery-item" data-category="food">
+          <div class="g-card">
+            <img src="/public/images/tandoori-platter.jpg" alt="Butter Garlic Naan and Paneer Tikka" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Tandoori Breads & Tikka</h4>
+                <span>Hot Butter Naan & Mint Dip</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/tandoori-platter.jpg', 'Fresh Tandoori Garlic Naan and Tikka Platter')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Restaurant Interior -->
+        <div class="gallery-item" data-category="interior">
+          <div class="g-card">
+            <img src="/public/images/restaurant-interior.jpg" alt="Hotel Spandan A/C Family Dining Hall" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>A/C Family Dining Hall</h4>
+                <span>Warm lighting, booth & family seating</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/restaurant-interior.jpg', 'Hotel Spandan A/C Family Dining Hall Interior')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Mocktails & Refreshments -->
+        <div class="gallery-item" data-category="food">
+          <div class="g-card">
+            <img src="/public/images/spandan-mocktails.jpg" alt="Cool Refreshing Mocktails" loading="lazy">
+            <div class="g-overlay">
+              <div class="g-info">
+                <h4>Signature Mocktails</h4>
+                <span>Mint Mojito & Mango Saffron Cooler</span>
+              </div>
+              <button class="g-zoom-btn" onclick="openLightbox('/public/images/spandan-mocktails.jpg', 'Signature Mocktails & Refreshing Beverages')">
+                <i class="fa-solid fa-maximize"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest Reviews & Testimonials -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-comments"></i> Diners' Praise</span>
+        <h2 class="section-title">What Our Guests Say</h2>
+        <p class="section-desc">Over 75,000 satisfied diners have made Hotel Spandan their favorite food destination.</p>
+      </div>
+
+      <div class="reviews-grid">
+        
+        <div class="review-card">
+          <div class="review-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "The Odia Pakhala Thali here is simply out of this world! Served in authentic royal Kansa brass utensils with crispy Badi Chura, saga bhaja, and chips. The best traditional dining experience in town!"
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">SP</div>
+            <div class="reviewer-info">
+              <h5>Soumya Ranjan Panda</h5>
+              <span>Local Food Enthusiast • Google Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "We celebrated my parents' 25th wedding anniversary here in their celebration hall. Amazing ambience, polite staff, and the Spandan Special Handi Curry with Garlic Naan was a huge hit with all our relatives!"
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">PM</div>
+            <div class="reviewer-info">
+              <h5>Priyanka Mohapatra</h5>
+              <span>Family Celebration • Verified Diner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Superb crispy chicken starters and royal dum biryani! The restaurant has lovely lighting at night, fully air-conditioned halls, very clean washrooms, and fast service. Highly recommended for families."
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">RK</div>
+            <div class="reviewer-info">
+              <h5>Rakesh Kumar Sahoo</h5>
+              <span>Regular Customer • Google Review</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rating summary banner -->
+      <div class="rating-summary-bar">
+        <div class="rs-badge">
+          <span class="rs-score">4.9</span>
+          <div class="rs-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="rs-info">
+          <h4>Ranked #1 Family Restaurant in the Area</h4>
+          <p>Based on 1,450+ authentic diner reviews on Google & Food Guides</p>
+        </div>
+        <div class="rs-action">
+          <a href="https://maps.google.com" target="_blank" class="btn btn-outline btn-sm">
+            <i class="fa-brands fa-google"></i> Read More Reviews
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Location & Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-location-dot"></i> Visit & Contact</span>
+        <h2 class="section-title">Find & Reach Hotel Spandan</h2>
+        <p class="section-desc">We are excited to welcome you. Get directions, contact our team, or send an inquiry.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Contact Information Cards -->
+        <div class="contact-info-panel">
+          
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="ic-content">
+              <h4>Our Location</h4>
+              <p>Hotel Spandan A/C Family Restaurant<br>Main Road, Odisha, India</p>
+              <a href="https://maps.google.com" target="_blank" class="text-gold-link"><i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div class="ic-content">
+              <h4>Call & Reservations</h4>
+              <p><a href="tel:+919876543210">+91 98765 43210</a><br><a href="tel:+919876543211">+91 98765 43211</a></p>
+              <span class="sub-note">Available 10:00 AM – 11:30 PM</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="ic-content">
+              <h4>Operating Hours</h4>
+              <p><strong>Lunch:</strong> 11:30 AM – 03:30 PM<br><strong>Dinner:</strong> 07:00 PM – 11:00 PM</p>
+              <span class="sub-note">Open 7 Days a Week (Mon – Sun)</span>
+            </div>
+          </div>
+
+          <div class="info-card whatsapp-special-card">
+            <div class="ic-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="ic-content">
+              <h4>Instant WhatsApp Desk</h4>
+              <p>Chat directly for quick table confirmations, parcel orders, and party menu quotes.</p>
+              <a href="https://wa.me/919876543210?text=Hello%20Hotel%20Spandan,%20I%20have%20an%20inquiry" target="_blank" class="btn btn-whatsapp btn-sm mt-1">
+                <i class="fa-brands fa-whatsapp"></i> Start WhatsApp Chat
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Direct Contact & Inquiry Form -->
+        <div class="contact-form-panel">
+          <div class="form-container-card">
+            <h3><i class="fa-solid fa-paper-plane"></i> Send Us a Message</h3>
+            <p>Have questions about party bookings, catering, or dining? Leave a message and our team will get back right away.</p>
+            
+            <form id="contactInquiryForm" class="styled-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cName">Your Full Name *</label>
+                  <input type="text" id="cName" required placeholder="e.g. Ramesh Chandra">
+                </div>
+                <div class="form-group">
+                  <label for="cPhone">Phone Number *</label>
+                  <input type="tel" id="cPhone" required placeholder="e.g. 9876543210">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cEmail">Email Address (Optional)</label>
+                  <input type="email" id="cEmail" placeholder="e.g. ramesh@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="cSubject">Inquiry Type</label>
+                  <select id="cSubject">
+                    <option value="Table Reservation">Table Reservation</option>
+                    <option value="Banquet / Birthday Hall Booking">Banquet / Birthday Hall Booking</option>
+                    <option value="Outdoor Catering Inquiry">Outdoor Catering Inquiry</option>
+                    <option value="Bulk Food Order / Takeaway">Bulk Food Order / Takeaway</option>
+                    <option value="Feedback / Other">Feedback / Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cMessage">Your Message / Special Requests *</label>
+                <textarea id="cMessage" rows="4" required placeholder="Let us know the number of guests, date, preferred dishes or questions..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold btn-block btn-lg">
+                <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Map Banner -->
+      <div class="map-banner-card mt-4">
+        <div class="map-placeholder">
+          <div class="map-overlay-content">
+            <i class="fa-solid fa-location-dot map-pin-icon"></i>
+            <h3>Hotel Spandan A/C Family Restaurant</h3>
+            <p>Conveniently located with spacious parking, welcoming families and groups daily.</p>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-directions"></i> Get Turn-by-Turn Directions
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <div class="logo-emblem"><i class="fa-solid fa-utensils"></i></div>
+          <div>
+            <span class="f-title">HOTEL SPANDAN</span>
+            <span class="f-odia">ହୋଟେଲ ସ୍ପନ୍ଦନ</span>
+          </div>
+        </div>
+        <p class="f-desc">
+          Odisha's cherished A/C Family Restaurant celebrating rich regional delicacies, royal Pakhala thalis, sizzling kebabs, and warm heartfelt hospitality.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="f-heading">Quick Links</h4>
+        <ul class="f-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#specials">Signature Dishes</a></li>
+          <li><a href="#menu">Digital Food Menu</a></li>
+          <li><a href="#story">Story of Spandan</a></li>
+          <li><a href="#banquets">Banquet & Parties</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="f-heading">Popular Dishes</h4>
+        <ul class="f-links">
+          <li><a href="#menu">Royal Odia Pakhala Thali</a></li>
+          <li><a href="#menu">Spandan Special Handi Curry</a></li>
+          <li><a href="#menu">Crispy Spiced Kebab Crunch</a></li>
+          <li><a href="#menu">Royal Dum Handi Biryani</a></li>
+          <li><a href="#menu">Butter Garlic Tandoori Naan</a></li>
+          <li><a href="#menu">Mango Saffron Cooler</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="f-heading">Opening Hours</h4>
+        <div class="f-timing">
+          <div class="ft-row">
+            <span>Monday – Sunday:</span>
+            <strong>11:30 AM – 11:00 PM</strong>
+          </div>
+          <div class="ft-row">
+            <span>Lunch Service:</span>
+            <span>11:30 AM – 03:30 PM</span>
+          </div>
+          <div class="ft-row">
+            <span>Dinner Service:</span>
+            <span>07:00 PM – 11:00 PM</span>
+          </div>
+        </div>
+        <div class="f-booking-cta mt-3">
+          <button class="btn btn-gold btn-block btn-sm" id="footerBookBtn">
+            <i class="fa-solid fa-chair"></i> Reserve a Table Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 <strong>Hotel Spandan (ହୋଟେଲ ସ୍ପନ୍ଦନ)</strong>. All Rights Reserved. Pure & Hygienic A/C Family Restaurant.</p>
+        <p class="f-credits">Designed with ❤️ for Food Lovers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS & POPUPS ================= -->
+
+  <!-- 1. Table Reservation Modal -->
+  <div class="modal-backdrop" id="reservationModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <i class="fa-solid fa-champagne-glasses text-gold"></i>
+            <div>
+              <h3>Reserve Your Table at Hotel Spandan</h3>
+              <p>Instant table confirmation • No reservation fee</p>
+            </div>
+          </div>
+          <button class="modal-close" id="closeResModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <form id="fullReservationForm" class="modal-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fa-regular fa-user"></i> Full Name *</label>
+              <input type="text" id="resName" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-phone"></i> Phone Number *</label>
+              <input type="tel" id="resPhone" required placeholder="10-digit mobile number">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fa-regular fa-calendar"></i> Reservation Date *</label>
+              <input type="date" id="resDate" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fa-regular fa-clock"></i> Time Slot *</label>
+              <select id="resTime" required>
+                <option value="12:00 PM">Lunch: 12:00 PM</option>
+                <option value="01:00 PM">Lunch: 01:00 PM</option>
+                <option value="02:00 PM">Lunch: 02:00 PM</option>
+                <option value="03:00 PM">Lunch: 03:00 PM</option>
+                <option value="07:00 PM" selected>Dinner: 07:00 PM</option>
+                <option value="08:00 PM">Dinner: 08:00 PM</option>
+                <option value="09:00 PM">Dinner: 09:00 PM</option>
+                <option value="10:00 PM">Dinner: 10:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fa-solid fa-users"></i> Number of Guests *</label>
+              <select id="resGuests" required>
+                <option value="1 Guest">1 Guest</option>
+                <option value="2 Guests">2 Guests (Couple Table)</option>
+                <option value="3-4 Guests" selected>3 - 4 Guests (Family Table)</option>
+                <option value="5-8 Guests">5 - 8 Guests (Large Group Table)</option>
+                <option value="8+ Guests (Banquet)">8+ Guests (Celebration / Banquet)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-champagne-glasses"></i> Occasion</label>
+              <select id="resOccasion">
+                <option value="Casual Dining">Casual Dining</option>
+                <option value="Family Gathering">Family Gathering</option>
+                <option value="Birthday Celebration">Birthday Celebration</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Business Lunch">Business Lunch</option>
+                <option value="Special Date">Special Date</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-regular fa-comment-dots"></i> Special Dish Requests / Notes (Optional)</label>
+            <input type="text" id="resNotes" placeholder="e.g. Please arrange Pakhala Thali, high chair for toddler...">
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline" id="cancelResModalBtn">Cancel</button>
+            <button type="submit" class="btn btn-gold btn-lg">
+              <i class="fa-solid fa-check"></i> Confirm Table Reservation
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Banquet & Party Inquiry Modal -->
+  <div class="modal-backdrop" id="banquetModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <i class="fa-solid fa-cake-candles text-gold"></i>
+            <div>
+              <h3>Banquet Hall & Event Booking Inquiry</h3>
+              <p>Celebrations • Birthdays • Anniversaries • Corporate Events</p>
+            </div>
+          </div>
+          <button class="modal-close" id="closeBanquetModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <form id="banquetInquiryForm" class="modal-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Host Name *</label>
+              <input type="text" id="bName" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label>Mobile Number *</label>
+              <input type="tel" id="bPhone" required placeholder="10-digit phone number">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Event Type *</label>
+              <select id="bType" required>
+                <option value="Birthday Celebration">Birthday Celebration</option>
+                <option value="Wedding Anniversary">Wedding Anniversary</option>
+                <option value="Engagement / Ring Ceremony">Engagement / Ring Ceremony</option>
+                <option value="Kitty Party">Kitty Party</option>
+                <option value="Corporate Dinner / Meeting">Corporate Dinner / Meeting</option>
+                <option value="Family Get-Together">Family Get-Together</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Expected Guests *</label>
+              <select id="bGuests" required>
+                <option value="25 - 50 Guests">25 - 50 Guests</option>
+                <option value="50 - 100 Guests" selected>50 - 100 Guests</option>
+                <option value="100 - 150 Guests">100 - 150 Guests</option>
+                <option value="150 - 200+ Guests">150 - 200+ Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Event Date *</label>
+              <input type="date" id="bDate" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Menu Style</label>
+              <select id="bMenu">
+                <option value="Royal Odia & Indian Buffet">Royal Odia & Indian Buffet</option>
+                <option value="Multi-Cuisine (North Indian + Chinese)">Multi-Cuisine (North Indian + Chinese)</option>
+                <option value="Pure Vegetarian Feast">Pure Vegetarian Feast</option>
+                <option value="Custom Chef Menu">Custom Chef Menu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Additional Requirements</label>
+            <textarea id="bNotes" rows="3" placeholder="Decorations, sound system, cake table, special dishes..."></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline" id="cancelBanquetModalBtn">Cancel</button>
+            <button type="submit" class="btn btn-gold btn-lg">
+              <i class="fa-solid fa-paper-plane"></i> Submit Event Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Food Order / Inquiry Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="fa-solid fa-bag-shopping text-gold"></i>
+        <div>
+          <h4>Selected Menu Items</h4>
+          <span id="cartDrawerSub">0 items selected</span>
+        </div>
+      </div>
+      <button class="cart-drawer-close" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartItemsContainer">
+      <!-- Empty state / cart items populated via JS -->
+      <div class="cart-empty-state">
+        <i class="fa-solid fa-utensils"></i>
+        <p>No dishes added yet.<br>Explore our digital menu and click <strong>"Add to Order"</strong>!</p>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Estimated Total:</span>
+        <strong id="cartEstimatedTotal">₹0</strong>
+      </div>
+      <p class="cart-note">* Prices are indicative. Final bill prepared upon order confirmation.</p>
+      <div class="cart-actions">
+        <button class="btn btn-whatsapp btn-block" id="sendWhatsAppOrderBtn">
+          <i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp
+        </button>
+        <button class="btn btn-primary btn-block mt-1" id="cartBookTableBtn">
+          <i class="fa-solid fa-chair"></i> Book Table with this Order
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- 4. Photo Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="closeLightboxBtn"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="Zoomed Photo" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- 5. Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Floating Shortcuts -->
+  <div class="floating-quick-bar">
+    <a href="https://wa.me/919876543210?text=Hello%20Hotel%20Spandan,%20I%20would%20like%20to%20reserve%20a%20table%20/%20order%20food" target="_blank" class="float-btn float-whatsapp" title="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="float-tooltip">WhatsApp Order & Inquiry</span>
+    </a>
+    <button class="float-btn float-call" id="floatBookBtn" title="Book a Table">
+      <i class="fa-solid fa-chair"></i>
+      <span class="float-tooltip">Instant Table Booking</span>
+    </button>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
