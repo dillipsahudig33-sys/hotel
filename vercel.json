@@ -3,8 +3,8 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/images/(.*)",
-      "destination": "/public/images/$1"
+      "source": "/public/images/(.*)",
+      "destination": "/images/$1"
     }
   ],
   "headers": [

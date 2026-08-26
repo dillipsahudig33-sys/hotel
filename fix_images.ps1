@@ -48,11 +48,12 @@ function Upload-File($relPath) {
 
 $ok1 = Upload-File "vercel.json"
 $ok2 = Upload-File "src/main.js"
+$ok3 = Upload-File "index.html"
 
 Write-Host ""
-if ($ok1 -and $ok2) {
+if ($ok1 -and $ok2 -and $ok3) {
     Write-Host "  SUCCESS! Vercel will redeploy in ~1 minute." -ForegroundColor Green
-    Write-Host "  Live site: https://hotel-spandan.vercel.app" -ForegroundColor Cyan
+    Write-Host "  Live site: https://hotelspandan.vercel.app" -ForegroundColor Cyan
 } else {
     Write-Host "  Some uploads failed. Check your token has 'repo' permission." -ForegroundColor Yellow
 }
