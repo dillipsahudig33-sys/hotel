@@ -124,6 +124,23 @@ public class SpandanWebServer
                 string decoded = Uri.UnescapeDataString(rawUrl).TrimStart('/').Replace('/', Path.DirectorySeparatorChar);
                 string fullPath = Path.Combine(_root, decoded);
 
+                if (Directory.Exists(fullPath))
+                {
+                    string indexCandidate = Path.Combine(fullPath, "index.html");
+                    if (File.Exists(indexCandidate)) fullPath = indexCandidate;
+                }
+
+                if (!File.Exists(fullPath) && File.Exists(fullPath + ".html"))
+                {
+                    fullPath = fullPath + ".html";
+                }
+
+                if (!File.Exists(fullPath) && (decoded.StartsWith("images" + Path.DirectorySeparatorChar) || decoded.StartsWith("images/")))
+                {
+                    string pubImg = Path.Combine(_root, "public", decoded);
+                    if (File.Exists(pubImg)) fullPath = pubImg;
+                }
+
                 if (File.Exists(fullPath))
                 {
                     string ext = Path.GetExtension(fullPath);
