@@ -1447,83 +1447,7 @@ button, input, select, textarea {
   flex-wrap: wrap;
 }
 
-/* =========================================================
-   BANQUETS & CELEBRATIONS SECTION
-   ========================================================= */
-.banquets-section {
-  background: var(--bg-dark);
-}
 
-.banquets-banner {
-  background: radial-gradient(circle at top right, rgba(217, 155, 38, 0.15), transparent 60%),
-              linear-gradient(135deg, #141b24 0%, #0d1218 100%);
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius-lg);
-  padding: 3.5rem 3rem;
-  box-shadow: var(--shadow-lg);
-}
-
-.banquet-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.banquet-content p {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  margin-bottom: 2.5rem;
-  line-height: 1.7;
-}
-
-.banquet-features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.bf-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 1.5rem 1rem;
-  transition: all var(--transition-fast);
-}
-
-.bf-card:hover {
-  background: rgba(217, 155, 38, 0.08);
-  border-color: var(--border-gold);
-  transform: translateY(-3px);
-}
-
-.bf-card i {
-  font-size: 2rem;
-  color: var(--gold-light);
-  margin-bottom: 0.85rem;
-  display: inline-block;
-}
-
-.bf-card h4 {
-  font-size: 0.95rem;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.bf-card p {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
-
-.banquet-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
 
 /* =========================================================
    GALLERY SECTION
@@ -2558,7 +2482,6 @@ button, input, select, textarea {
   .story-img-sub-wrap { right: 10px; }
   .footer-container { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
-  .banquet-features-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -2576,6 +2499,5 @@ button, input, select, textarea {
   .menu-search-box { max-width: 100%; }
   
   .form-row { grid-template-columns: 1fr; }
-  .banquet-features-grid { grid-template-columns: 1fr; }
   .footer-container { grid-template-columns: 1fr; }
 }

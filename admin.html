@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Spandan | Manager Admin Dashboard & Operations</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="/src/admin.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. AUTHENTICATION / MANAGER LOGIN GATE
+       ========================================== -->
+  <div class="auth-wrapper" id="authWrapper">
+    <div class="auth-card">
+      <div class="auth-logo-emblem">
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+      <h2 class="auth-title">HOTEL <span>SPANDAN</span></h2>
+      <p class="auth-sub">Manager Admin & Operations Portal</p>
+
+      <div class="auth-error-msg" id="authErrorMsg"></div>
+
+      <form id="authLoginForm" class="auth-form">
+        <div class="form-group">
+          <label for="adminUsername">Manager Username</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-user-shield"></i>
+            <input type="text" id="adminUsername" class="form-control" placeholder="Enter username" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="adminPassword">Access Password</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" id="adminPassword" class="form-control" placeholder="Enter password" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-admin-primary" style="margin-top:0.5rem;">
+          <i class="fa-solid fa-right-to-bracket"></i> Login to Dashboard
+        </button>
+
+        <div class="auth-demo-hint">
+          <i class="fa-solid fa-circle-info text-gold"></i> Default Login Credentials:<br>
+          Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>spandan123</code>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. MAIN MANAGER ADMIN APP
+       ========================================== -->
+  <div class="admin-app" id="adminApp" style="display:none;">
+
+    <!-- Left Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-logo">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="sidebar-title">
+          HOTEL SPANDAN
+          <small>MANAGER PORTAL</small>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item-btn active" data-tab="dashboard">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="reservations">
+          <i class="fa-solid fa-chair"></i>
+          <span>Table Bookings</span>
+          <span class="nav-badge badge-alert" id="badgeReservations">0</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="orders">
+          <i class="fa-solid fa-bowl-rice"></i>
+          <span>Food Orders</span>
+          <span class="nav-badge" id="badgeOrders">0</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="inquiries">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Inquiries</span>
+          <span class="nav-badge" id="badgeInquiries">0</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="menu">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Menu & Pricing</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="settings">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="manager-profile">
+          <div class="manager-avatar">M</div>
+          <div class="manager-info">
+            <h5>Duty Manager</h5>
+            <span>Online • Active</span>
+          </div>
+        </div>
+        <button class="btn-logout" title="Sign Out">
+          <i class="fa-solid fa-power-off"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <div class="admin-main">
+      
+      <!-- Topbar Header -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebarToggleBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h2 class="topbar-page-title" id="topbarPageTitle">Live Dashboard & Overview</h2>
+        </div>
+
+        <div class="topbar-right">
+          <div class="live-clock-badge">
+            <i class="fa-regular fa-clock text-gold"></i>
+            <span id="adminLiveClock">--:--:--</span>
+          </div>
+
+          <button class="btn-action-gold" onclick="openModal('modalNewReservation')">
+            <i class="fa-solid fa-plus"></i> Manual Booking
+          </button>
+
+          <a href="/" target="_blank" class="btn-view-site">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Customer Site
+          </a>
+
+          <button class="btn-logout" title="Logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Views Container -->
+      <main class="admin-content-body">
+
+        <!-- ==========================================
+             TAB 1: LIVE DASHBOARD OVERVIEW
+             ========================================== -->
+        <section class="tab-content-view active" id="view-dashboard">
+          
+          <!-- KPI Metrics Row -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon gold">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="metric-data">
+                <h6>Today's Reservations</h6>
+                <h3 id="kpiBookingsCount">0</h3>
+                <span>Booked tables today</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon blue">
+                <i class="fa-solid fa-fire-burner"></i>
+              </div>
+              <div class="metric-data">
+                <h6>Active Food Orders</h6>
+                <h3 id="kpiOrdersCount">0</h3>
+                <span>Kitchen queue orders</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon green">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+              <div class="metric-data">
+                <h6>Estimated Revenue</h6>
+                <h3 id="kpiRevenueAmount">₹0</h3>
+                <span>Total processed sales</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon purple">
+                <i class="fa-solid fa-bell"></i>
+              </div>
+              <div class="metric-data">
+                <h6>New Inquiries</h6>
+                <h3 id="kpiInquiriesCount">0</h3>
+                <span>Unread messages</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Reservations Panel -->
+          <div class="panel-card">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Recent Table Reservations</span>
+              </div>
+              <div class="panel-controls">
+                <button class="btn-action-sm" onclick="switchTab('reservations')">
+                  <i class="fa-solid fa-list"></i> View All Bookings
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Ref ID</th>
+                    <th>Customer Name</th>
+                    <th>Date & Time</th>
+                    <th>Party Size</th>
+                    <th>Status</th>
+                    <th>Quick Contact</th>
+                  </tr>
+                </thead>
+                <tbody id="dashRecentReservationsBody">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ==========================================
+             TAB 2: TABLE RESERVATIONS
+             ========================================== -->
+        <section class="tab-content-view" id="view-reservations">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fa-solid fa-chair"></i>
+                <span>All Table Reservations</span>
+              </div>
+
+              <div class="panel-controls">
+                <div class="search-control-wrap">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="resSearchInput" class="search-input" placeholder="Search by name or phone...">
+                </div>
+
+                <select id="resFilterStatus" class="select-filter">
+                  <option value="all">All Statuses</option>
+                  <option value="pending">Pending</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="seated">Seated</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+
+                <button class="btn-action-gold" onclick="openModal('modalNewReservation')">
+                  <i class="fa-solid fa-plus"></i> Add Booking
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Ref ID</th>
+                    <th>Guest Details</th>
+                    <th>Date & Time</th>
+                    <th>Table Size & Type</th>
+                    <th>Special Notes</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="reservationsTableBody">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 3: FOOD ORDERS QUEUE
+             ========================================== -->
+        <section class="tab-content-view" id="view-orders">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Kitchen Orders & Cart Submissions</span>
+              </div>
+
+              <div class="panel-controls">
+                <div class="search-control-wrap">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="orderSearchInput" class="search-input" placeholder="Search order ID...">
+                </div>
+
+                <select id="orderFilterStatus" class="select-filter">
+                  <option value="all">All Orders</option>
+                  <option value="received">Received</option>
+                  <option value="preparing">Preparing</option>
+                  <option value="ready">Ready</option>
+                  <option value="completed">Delivered</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Order Type</th>
+                    <th>Dishes Summary</th>
+                    <th>Total Bill</th>
+                    <th>Live Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 4: CUSTOMER INQUIRIES
+             ========================================== -->
+        <section class="tab-content-view" id="view-inquiries">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span>Customer Inquiries & Messages</span>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Inquiry ID</th>
+                    <th>Customer Info</th>
+                    <th>Subject</th>
+                    <th>Message Details</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="inquiriesTableBody">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 5: MENU & PRICING CATALOG
+             ========================================== -->
+        <section class="tab-content-view" id="view-menu">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Active Menu Items & Pricing</span>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Item #</th>
+                    <th>Dish Name</th>
+                    <th>Category</th>
+                    <th>Dietary Type</th>
+                    <th>Price (INR)</th>
+                    <th>Availability</th>
+                  </tr>
+                </thead>
+                <tbody id="menuCatalogTableBody">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 6: SYSTEM & MANAGER SETTINGS
+             ========================================== -->
+        <section class="tab-content-view" id="view-settings">
+          
+          <!-- Update Password Box -->
+          <div class="settings-section-box">
+            <h4><i class="fa-solid fa-shield-halved text-gold"></i> Manager Security & Password</h4>
+            <p>Update your admin portal login credentials.</p>
+
+            <form id="formUpdateCredentials" class="auth-form">
+              <div class="form-group">
+                <label>Current Username</label>
+                <input type="text" id="setCurUsername" class="form-control" readonly>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label>New Username</label>
+                  <input type="text" id="setNewUsername" class="form-control" placeholder="New username" required>
+                </div>
+                <div class="form-group">
+                  <label>New Password</label>
+                  <input type="password" id="setNewPassword" class="form-control" placeholder="New password" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" id="setConfirmPassword" class="form-control" placeholder="Re-type new password" required>
+              </div>
+
+              <button type="submit" class="btn-action-gold" style="width:fit-content; padding:0.6rem 1.2rem;">
+                <i class="fa-solid fa-floppy-disk"></i> Save New Credentials
+              </button>
+            </form>
+          </div>
+
+          <!-- Data Backup & Reset -->
+          <div class="settings-section-box">
+            <h4><i class="fa-solid fa-database text-gold"></i> Data Backup & Database Maintenance</h4>
+            <p>Download full JSON records of bookings, orders, and inquiries, or reset to demo data.</p>
+
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+              <button class="btn-action-sm" onclick="exportDatabaseJSON()">
+                <i class="fa-solid fa-file-arrow-down"></i> Export Full JSON Backup
+              </button>
+              <button class="btn-action-sm" style="color:#f87171; border-color:rgba(239,68,68,0.3);" onclick="resetDemoData()">
+                <i class="fa-solid fa-arrows-rotate"></i> Reset Sample Demo Data
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       3. MODALS (MANUAL BOOKING & KOT PRINT)
+       ========================================== -->
+
+  <!-- Modal: Manual Walk-in / Phone Reservation -->
+  <div class="admin-modal-backdrop" id="modalNewReservation">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h4><i class="fa-solid fa-chair text-gold"></i> Add Walk-in / Phone Reservation</h4>
+        <button class="admin-modal-close" onclick="closeModal('modalNewReservation')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="formManualReservation">
+        <div class="admin-modal-body">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label>Customer Name *</label>
+              <input type="text" id="mResName" class="form-control" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="mResPhone" class="form-control" placeholder="10-digit mobile" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2" style="margin-top:1rem;">
+            <div class="form-group">
+              <label>Booking Date *</label>
+              <input type="date" id="mResDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Time Slot *</label>
+              <select id="mResTime" class="form-control" required>
+                <option value="12:30 PM">Lunch: 12:30 PM</option>
+                <option value="01:30 PM">Lunch: 01:30 PM</option>
+                <option value="02:30 PM">Lunch: 02:30 PM</option>
+                <option value="07:30 PM" selected>Dinner: 07:30 PM</option>
+                <option value="08:30 PM">Dinner: 08:30 PM</option>
+                <option value="09:30 PM">Dinner: 09:30 PM</option>
+                <option value="10:00 PM">Dinner: 10:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2" style="margin-top:1rem;">
+            <div class="form-group">
+              <label>Number of Guests *</label>
+              <select id="mResGuests" class="form-control" required>
+                <option value="4 Guests (Family Table)" selected>4 Guests (Family Table)</option>
+                <option value="6 Guests (Large Table)">6 Guests (Large Table)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Dining Occasion</label>
+              <select id="mResOccasion" class="form-control">
+                <option value="Family Dinner">Family Dinner</option>
+                <option value="Lunch Meal">Lunch Meal</option>
+                <option value="Executive Dining">Executive Dining</option>
+                <option value="Casual Dine-in">Casual Dine-in</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:1rem;">
+            <label>Notes / Dish Requests</label>
+            <input type="text" id="mResNotes" class="form-control" placeholder="e.g. Near window, Pakhala Thali pre-order...">
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-action-sm" onclick="closeModal('modalNewReservation')">Cancel</button>
+          <button type="submit" class="btn-action-gold">
+            <i class="fa-solid fa-check"></i> Save Reservation
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Print Kitchen Order Ticket (KOT) -->
+  <div class="admin-modal-backdrop" id="modalKOTPrint">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h4><i class="fa-solid fa-print text-gold"></i> Kitchen Order Ticket (KOT) Preview</h4>
+        <button class="admin-modal-close" onclick="closeModal('modalKOTPrint')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="admin-modal-body" id="kotReceiptBody">
+        <!-- Injected via JS -->
+      </div>
+
+      <div class="admin-modal-footer">
+        <button type="button" class="btn-action-sm" onclick="closeModal('modalKOTPrint')">Close</button>
+        <button type="button" class="btn-action-gold" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Print Kitchen Slip
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/src/admin.js"></script>
+</body>
+</html>

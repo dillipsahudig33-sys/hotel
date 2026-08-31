@@ -1,6 +1,6 @@
 /**
  * HOTEL SPANDAN - INTERACTIVE ENGINE
- * Multi-cuisine A/C Family Restaurant & Banquets
+ * Multi-cuisine A/C Family Restaurant
  */
 
 // ==========================================
@@ -358,7 +358,7 @@ function renderMenu() {
     return `
       <div class="menu-item-card">
         <div class="mi-img-wrap">
-          <img src="${item.image}" alt="${item.name}" class="mi-img" loading="lazy">
+          <img src="${item.image}" alt="${item.name}" class="mi-img" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='/images/'+this.src.split('/').pop();}">
           ${dietIcon}
           ${chefBadge}
         </div>
@@ -502,7 +502,8 @@ function sendWhatsAppOrder() {
     return;
   }
 
-  let text = `*New Food Order / Table Inquiry - Hotel Spandan*\n\n`;
+  const orderId = "ORD-" + Math.floor(1000 + Math.random() * 9000);
+  let text = `*New Food Order (${orderId}) - Hotel Spandan*\n\n`;
   text += `*Selected Dishes:*\n`;
   let total = 0;
   items.forEach((item, index) => {
@@ -512,6 +513,25 @@ function sendWhatsAppOrder() {
   });
   text += `\n*Estimated Bill Total:* ₹${total}\n`;
   text += `\n*Customer Request:* Please confirm preparation time / table reservation. Thank you!`;
+
+  // Persist to Admin Orders Database
+  try {
+    const existingOrders = JSON.parse(localStorage.getItem("spandan_orders") || "[]");
+    const newOrder = {
+      id: orderId,
+      customerName: "Website Customer",
+      phone: "Direct WhatsApp Order",
+      type: "Takeaway / Dine-in",
+      items: items.map(i => ({ name: i.name, qty: i.qty, price: i.price })),
+      total: total,
+      status: "received",
+      createdAt: new Date().toISOString()
+    };
+    existingOrders.unshift(newOrder);
+    localStorage.setItem("spandan_orders", JSON.stringify(existingOrders));
+  } catch (e) {
+    console.error("Failed to save order to localStorage:", e);
+  }
 
   const encoded = encodeURIComponent(text);
   const whatsappUrl = `https://wa.me/919876543210?text=${encoded}`;
@@ -677,6 +697,27 @@ function setupEventListeners() {
 
       const refId = "SPANDAN-TBL-" + Math.floor(1000 + Math.random() * 9000);
 
+      // Persist to Admin Reservations Database
+      try {
+        const existingRes = JSON.parse(localStorage.getItem("spandan_reservations") || "[]");
+        const newRes = {
+          id: refId,
+          name: name,
+          phone: phone,
+          date: date,
+          time: time,
+          guests: guests,
+          occasion: occasion,
+          notes: notes || "",
+          status: "pending",
+          createdAt: new Date().toISOString()
+        };
+        existingRes.unshift(newRes);
+        localStorage.setItem("spandan_reservations", JSON.stringify(existingRes));
+      } catch (e) {
+        console.error("Failed to save reservation to localStorage:", e);
+      }
+
       closeReservationModal();
       showToast(`🎉 Table Reserved! Ref #${refId} for ${name} (${guests}) on ${date} at ${time}. We will welcome you!`);
 
@@ -694,45 +735,6 @@ function setupEventListeners() {
     });
   }
 
-  // Banquet Modal Open/Close
-  const openBanquetModalBtn = document.getElementById("openBanquetModalBtn");
-  const banquetModal = document.getElementById("banquetModal");
-  const closeBanquetModalBtn = document.getElementById("closeBanquetModalBtn");
-  const cancelBanquetModalBtn = document.getElementById("cancelBanquetModalBtn");
-
-  const openBanquetModal = () => {
-    if (banquetModal) banquetModal.classList.add("active");
-  };
-  const closeBanquetModal = () => {
-    if (banquetModal) banquetModal.classList.remove("active");
-  };
-
-  if (openBanquetModalBtn) openBanquetModalBtn.addEventListener("click", openBanquetModal);
-  if (closeBanquetModalBtn) closeBanquetModalBtn.addEventListener("click", closeBanquetModal);
-  if (cancelBanquetModalBtn) cancelBanquetModalBtn.addEventListener("click", closeBanquetModal);
-  if (banquetModal) {
-    banquetModal.addEventListener("click", (e) => {
-      if (e.target === banquetModal) closeBanquetModal();
-    });
-  }
-
-  // Banquet Form Submit
-  const banquetInquiryForm = document.getElementById("banquetInquiryForm");
-  if (banquetInquiryForm) {
-    banquetInquiryForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const bName = document.getElementById("bName")?.value;
-      const bPhone = document.getElementById("bPhone")?.value;
-      const bType = document.getElementById("bType")?.value;
-      const bGuests = document.getElementById("bGuests")?.value;
-      const bDate = document.getElementById("bDate")?.value;
-
-      closeBanquetModal();
-      showToast(`✨ Banquet inquiry submitted for ${bName} (${bType} on ${bDate})! Our event team will call you within 2 hours.`);
-      banquetInquiryForm.reset();
-      setDefaultDates();
-    });
-  }
 
   // Contact Form Submit
   const contactInquiryForm = document.getElementById("contactInquiryForm");
@@ -740,6 +742,30 @@ function setupEventListeners() {
     contactInquiryForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("cName")?.value;
+      const phone = document.getElementById("cPhone")?.value;
+      const email = document.getElementById("cEmail")?.value;
+      const subject = document.getElementById("cSubject")?.value;
+      const message = document.getElementById("cMessage")?.value;
+
+      // Persist to Admin Inquiries Database
+      try {
+        const existingInquiries = JSON.parse(localStorage.getItem("spandan_inquiries") || "[]");
+        const newInq = {
+          id: "INQ-" + Math.floor(1000 + Math.random() * 9000),
+          name: name,
+          phone: phone,
+          email: email || "N/A",
+          subject: subject,
+          message: message,
+          status: "new",
+          createdAt: new Date().toISOString()
+        };
+        existingInquiries.unshift(newInq);
+        localStorage.setItem("spandan_inquiries", JSON.stringify(existingInquiries));
+      } catch (err) {
+        console.error("Failed to save inquiry:", err);
+      }
+
       showToast(`Thank you, ${name}! Your message has been sent to Hotel Spandan management.`);
       contactInquiryForm.reset();
     });
