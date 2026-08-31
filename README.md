@@ -1,6 +1,6 @@
 # 🍽️ Hotel Spandan (ହୋଟେଲ ସ୍ପନ୍ଦନ) - Official Website
 
-> **Premium A/C Family Restaurant & Banquets**  
+> **Premium A/C Family Restaurant**  
 > Authentic Odia Delicacies, Royal Pakhala Thali, Tandoori Starters, Rich Handi Curries & Indian Multi-Cuisine.
 
 ---
@@ -9,7 +9,7 @@
 
 - 🍛 **Royal Odia Pakhala Thali & Multi-Cuisine Menu**: Interactive digital menu with Veg / Non-Veg filters, category tabs, and search.
 - 🛒 **Smart Cart & WhatsApp Ordering**: Instant bill calculator with seamless 1-click WhatsApp order generation.
-- 🪑 **Online Table & Banquet Reservation**: Instant booking modal with party size, date, time slot, and guest details.
+- 🪑 **Online Table Reservation**: Instant dining table booking modal with guest count, date, time slot, and special requests.
 - 📸 **Photo Gallery & Lightbox**: High-resolution dish photos and restaurant ambience gallery with zoom preview.
 - 📱 **100% Responsive Design**: Optimized for mobile phones, tablets, laptops, and ultra-wide desktop screens.
 - ⚡ **Zero-Dependency Fast Loading**: Pure HTML5, modern Vanilla CSS with glassmorphism & rich animations, and modular Vanilla JS.
